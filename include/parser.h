@@ -38,11 +38,11 @@ typedef enum {
 
 // AST Node structure
 typedef struct ASTNode {
-    ASTNodeType type;           // Type of node
-    Token token;               // Token associated with this node
-    struct ASTNode* left;      // Left child
-    struct ASTNode* right;     // Right child
-    // TODO: Add more fields if needed
+    ASTNodeType type;      // e.g., AST_ASSIGN, AST_VARDECL, etc.
+    Token token;           // Associated token
+    struct ASTNode* left;  // For expressions, the left operand or child
+    struct ASTNode* right; // For expressions, the right operand or child
+    struct ASTNode* next;  // New: used solely to chain statements in a block
 } ASTNode;
 
 // Parser functions

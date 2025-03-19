@@ -135,7 +135,7 @@ Token get_next_token(const char* input, int* pos) {
         } while ((isalnum(c) || c == '_') && i < sizeof(token.lexeme) - 1);
 
         token.lexeme[i] = '\0';
-
+        //printf("DEBUG (lexer): Found identifier '%s' at line %d\n", token.lexeme, token.line);
         // Check if it's a keyword
         TokenType keyword_type = is_keyword(token.lexeme);
         if (keyword_type) {
